@@ -13,7 +13,7 @@ build:
 	@ echo "🛠  Build done 🛠"
 
 test:
-	go test -v -mod=vendor ./...
+	go test -v ./...
 
 lint:
 	@ echo "🪛  Start linting 🪛"

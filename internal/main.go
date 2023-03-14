@@ -1,7 +1,24 @@
 package main
 
-import "fmt"
+import (
+	"log"
+
+	"github.com/Vico1993/turbo-memory/internal/bot"
+	"github.com/Vico1993/turbo-memory/internal/cron"
+	"github.com/joho/godotenv"
+)
 
 func main() {
-	fmt.Println("Hello Victor")
+	// load .env file
+	err := godotenv.Load(".env")
+	if err != nil {
+		log.Fatalf("Error loading .env file")
+		return
+	}
+
+	// Load cron
+	cron.Init()
+
+	// Start bot
+	bot.Init()
 }
