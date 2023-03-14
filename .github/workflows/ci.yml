@@ -32,8 +32,11 @@ jobs:
             - name: Checkout code
               uses: actions/checkout@v3
 
+            - name: Verify Deps
+              run: go mod verify
+
             - name: Build Deps
-              run: go mod vendor
+              run: go mod download
 
     test:
         name: Test
