@@ -9,7 +9,7 @@ import (
 	"github.com/joho/godotenv"
 )
 
-// TODO: Make test... It's good for your life
+// @todo: Add test in this application
 
 func main() {
 	// load .env file
