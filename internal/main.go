@@ -9,6 +9,8 @@ import (
 	"github.com/joho/godotenv"
 )
 
+// TODO: Make test... It's good for your life
+
 func main() {
 	// load .env file
 	err := godotenv.Load(".env")
