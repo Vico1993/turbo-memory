@@ -1,7 +1,6 @@
 package bot
 
 import (
-	"fmt"
 	"os"
 	"strconv"
 
@@ -16,7 +15,6 @@ func shouldAct(update tgbotapi.Update) bool {
 	return !(update.Message == nil && update.CallbackQuery == nil) &&
 		update.FromChat().Type == "private" &&
 		update.Message.Chat.ID == chatUserId
-
 }
 
 func handleUpdates(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
@@ -25,9 +23,11 @@ func handleUpdates(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 		return
 	}
 
-	fmt.Println("Talking with(id):", update.Message.Chat.ID)
-	fmt.Println("Talking with(firstName):", update.Message.Chat.FirstName)
-	fmt.Println("Talking with(lastName):", update.Message.Chat.LastName)
-	fmt.Println("Talking with(userName):", update.Message.Chat.UserName)
-	fmt.Println("Type", update.FromChat().Type)
+	if update.Message.IsCommand() {
+		for _, cmd := range CmdList {
+			if cmd.Command() == update.Message.Command() {
+				cmd.Exec(bot, update.Message)
+			}
+		}
+	}
 }

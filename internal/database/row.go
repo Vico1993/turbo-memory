@@ -29,7 +29,7 @@ func NewRow(val float64, tags ...string) *Row {
 }
 
 // Will save the information in the DB
-func (r *Row) save() {
+func (r *Row) Save() {
 	_, err := rowCollection.UpdateOne(
 		context.TODO(),
 		bson.D{{Key: "_id", Value: r.ID}},
