@@ -1,6 +1,7 @@
 package bot
 
 import (
+	"fmt"
 	"log"
 	"os"
 
@@ -28,6 +29,8 @@ func Init() {
 
 	// Load commands
 	CmdList = append(CmdList, newAddCmd())
+
+	fmt.Println("Bot command loaded!")
 
 	for update := range updates {
 		handleUpdates(update, bot)

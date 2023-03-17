@@ -21,4 +21,6 @@ func Init() {
 
 	// Start executing cron Async
 	s.StartAsync()
+
+	fmt.Println("Cron job initied!")
 }
