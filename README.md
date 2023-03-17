@@ -1,5 +1,7 @@
 # Turbo-Memory
 
+[![Coverage Status](https://coveralls.io/repos/github/Vico1993/turbo-memory/badge.svg?branch=main)](https://coveralls.io/github/Vico1993/turbo-memory?branch=main)
+
 Super named proposed by **GitHub**?!
 The plan with this repo is to build a bot that can help me manage my assets.
 Instead of me making a Spreadsheet with my expense, maybe with a bot, this can be easier.
@@ -19,4 +21,7 @@ TELEGRAM_BOT_TOKEN=<TELEGRAM_BOT>
 
 # Used by the bot to know which chat to interact with
 TELEGRAM_USER_CHAT_ID=<CHAT_ID>
+
+#MONGO srv url you want to use with username + password for the connection
+MONGO_URI=<URI>
 ```

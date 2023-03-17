@@ -5,6 +5,7 @@ import (
 
 	"github.com/Vico1993/turbo-memory/internal/bot"
 	"github.com/Vico1993/turbo-memory/internal/cron"
+	"github.com/Vico1993/turbo-memory/internal/database"
 	"github.com/joho/godotenv"
 )
 
@@ -15,6 +16,9 @@ func main() {
 		log.Fatalf("Error loading .env file")
 		return
 	}
+
+	// Load the database
+	database.Init()
 
 	// Load cron
 	cron.Init()
