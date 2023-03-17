@@ -1,6 +1,7 @@
 package bot
 
 import (
+	"fmt"
 	"os"
 	"strconv"
 
@@ -26,7 +27,10 @@ func handleUpdates(update tgbotapi.Update, bot *tgbotapi.BotAPI) {
 	if update.Message.IsCommand() {
 		for _, cmd := range CmdList {
 			if cmd.Command() == update.Message.Command() {
-				cmd.Exec(bot, update.Message)
+				err := cmd.Exec(bot, update.Message)
+				if err != nil {
+					fmt.Println("Couldn't execute command: " + cmd.Command() + " : " + err.Error())
+				}
 			}
 		}
 	}
