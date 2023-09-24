@@ -3,9 +3,9 @@ module github.com/Vico1993/turbo-memory
 go 1.20
 
 require (
-	github.com/go-co-op/gocron v1.31.2
+	github.com/go-co-op/gocron v1.34.2
 	github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
-	github.com/google/uuid v1.3.0
+	github.com/google/uuid v1.3.1
 	github.com/joho/godotenv v1.5.1
 	github.com/stretchr/testify v1.8.2
 	go.mongodb.org/mongo-driver v1.11.6
